@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="logo.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apply Venix NextGen Initiative</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>@keyframes spin{to{transform:rotate(360deg)}}.form-msg-error{color:#991b1b !important;background:rgba(254,202,202,0.25) !important;border-color:rgba(239,68,68,0.35) !important}
+
+/* Apply page: match section bg to nav so pre-scroll feels seamless */
+#apply{background:var(--navy);padding-top:9rem}
+#apply .apply-badge{background:rgba(58,174,230,0.12);border-color:rgba(58,174,230,0.35)}
+#apply .ab-dot{background:var(--sky)}
+#apply .ab-text{color:var(--sky)}
+#apply .s-eline{background:var(--sky)}
+#apply .s-etag{color:var(--sky)}
+#apply .s-heading{color:var(--white)}
+#apply .s-body{color:rgba(200,232,247,0.8)}
+#apply .apply-img-tag{color:rgba(220,240,255,0.85)}
+#apply .apply-form{background:rgba(0,42,85,0.7);border-color:rgba(58,174,230,0.2);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+#apply .apply-form::before{background:linear-gradient(90deg,var(--sky),var(--blue))}
+#apply .form-section-title{color:var(--sky);border-bottom-color:rgba(58,174,230,0.2)}
+#apply .fg label{color:rgba(200,232,247,0.7)}
+#apply .fg input,#apply .fg select{background:rgba(0,31,64,0.6);border-color:rgba(58,174,230,0.25);color:var(--white)}
+#apply .fg input:focus,#apply .fg select:focus{border-color:var(--sky);background:rgba(0,31,64,0.8)}
+#apply .fg input::placeholder{color:rgba(200,232,247,0.3)}
+#apply .fg select option{background:var(--navy);color:var(--white)}
+#apply .form-note{color:rgba(200,232,247,0.5)}</style>
+</head>
+<body>
+
+<div class="cur" id="cur"></div>
+<div class="cur-ring" id="cur-ring"></div>
+
+<!-- NAV -->
+<nav id="nav" class="solid">
+  <a href="index" class="nav-logo">
+    <img src="logo.png" alt="Venix NextGen" class="nav-logo-img">
+  </a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="about">About</a></li>
+    <li><a href="programme">Programme</a></li>
+    <li><a href="philosophy">Philosophy</a></li>
+    <li><a href="audience">Who It's For</a></li>
+  </ul>
+  <div class="nav-pill-group nav-pill-desktop">
+    <a href="https://lab.venixnextgen.org/" target="_blank" rel="noopener" class="nav-pill-outline">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3h6M10 3v6.5L4.5 18a2 2 0 0 0 1.7 3h11.6a2 2 0 0 0 1.7-3L14 9.5V3"/><path d="M6.5 14h11"/></svg>
+      The Lab
+    </a>
+    <a href="apply" class="nav-pill">Apply Now</a>
+  </div>
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<!-- Mobile nav drawer -->
+<div class="mobile-nav" id="mobile-nav">
+  <ul class="mobile-nav-links">
+    <li><a href="about">About</a></li>
+    <li><a href="programme">Programme</a></li>
+    <li><a href="philosophy">Philosophy</a></li>
+    <li><a href="audience">Who It's For</a></li>
+    <li><a href="https://lab.venixnextgen.org/" target="_blank" rel="noopener" class="mobile-nav-lab">Enter the Lab ↗</a></li>
+    <li><a href="apply" class="mobile-nav-apply">Apply Now →</a></li>
+  </ul>
+</div>
+
+<section id="apply">
+  <div class="apply-inner">
+    <div class="apply-left reveal">
+      <div class="apply-badge"><div class="ab-dot"></div><span class="ab-text">Applications Open</span></div>
+      <div class="s-eyebrow"><div class="s-eline"></div><span class="s-etag">Join the Initiative</span></div>
+      <h2 class="s-heading">Apply for the Next Cohort</h2>
+      <p class="s-body">Complete the form and our team will reach out with next steps. The next cohort starts soon — spots are limited.</p>
+      <div class="apply-img reveal d1">
+        <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?w=800&q=80" alt="Students in a workshop">
+        <div class="apply-img-tag">"The gap between using AI and understanding it is where careers are made or lost."</div>
+      </div>
+    </div>
+    <form class="apply-form reveal d2" onsubmit="handleSubmit(event)">
+      <div class="form-section-title">Personal Information</div>
+      <div class="form-row">
+        <div class="fg"><label>First Name</label><input type="text" name="firstName" placeholder="Adaeze" required></div>
+        <div class="fg"><label>Last Name</label><input type="text" name="lastName" placeholder="Okonkwo" required></div>
+      </div>
+      <div class="fg"><label>Email Address</label><input type="email" name="email" placeholder="adaeze@example.com" required></div>
+      <div class="fg"><label>Phone Number</label><input type="tel" name="phone" placeholder="+234 800 000 0000" required></div>
+      <div class="fg">
+        <label for="age-range">Age Range</label>
+        <select id="age-range" name="ageRange" required>
+          <option value="" disabled selected>Select your age range</option>
+          <option>14 – 18</option><option>18 – 25</option><option>26 – 35</option>
+        </select>
+      </div>
+      <div class="form-section-title mt-05">Location</div>
+      <div class="fg"><label>Address</label><input type="text" name="address" placeholder="Your street address"></div>
+      <div class="form-row">
+        <div class="fg">
+          <label for="state">State</label>
+          <select id="state" name="state">
+            <option value="" disabled selected>Select state</option>
+            <option>Abia</option><option>Adamawa</option><option>Akwa Ibom</option><option>Anambra</option><option>Bauchi</option><option>Bayelsa</option><option>Benue</option><option>Borno</option><option>Cross River</option><option>Delta</option><option>Ebonyi</option><option>Edo</option><option>Ekiti</option><option>Enugu</option><option>FCT – Abuja</option><option>Gombe</option><option>Imo</option><option>Jigawa</option><option>Kaduna</option><option>Kano</option><option>Katsina</option><option>Kebbi</option><option>Kogi</option><option>Kwara</option><option>Lagos</option><option>Nasarawa</option><option>Niger</option><option>Ogun</option><option>Ondo</option><option>Osun</option><option>Oyo</option><option>Plateau</option><option>Rivers</option><option>Sokoto</option><option>Taraba</option><option>Yobe</option><option>Zamfara</option>
+          </select>
+        </div>
+        <div class="fg"><label>Country</label><input type="text" name="country" value="Nigeria" placeholder="Country"></div>
+      </div>
+      <div id="form-msg"></div>
+      <button type="submit" class="form-submit">Submit Application →</button>
+      <p class="form-note">By applying you agree to be contacted by the Venix NextGen team regarding your application and programme details.</p>
+    </form>
+  </div>
+</section>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand-col">
+      <div class="footer-brand"><img src="logo.png" alt="Venix NextGen" class="footer-logo-img"></div>
+      <div class="footer-tagline">Innovate. Elevate. <span>NextGen.</span></div>
+      <p class="footer-mission">Equipping Nigerian youth with the AI knowledge and critical thinking skills to lead in a technology-shaped world.</p>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/company/venix-nextgen-initiative/" class="fs-link" aria-label="LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://web.facebook.com/photo/?fbid=122102022219345978&set=a.122102022243345978" class="fs-link" aria-label="Facebook">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.795.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.407 24 24 23.407 24 22.675V1.325C24 .593 23.407 0 22.675 0z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/venixnextgen/" class="fs-link" aria-label="Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-nav-cols">
+      <div class="footer-col">
+        <div class="footer-col-title">Programme</div>
+        <ul class="footer-links">
+          <li><a href="programme">Overview</a></li>
+          <li><a href="programme#weeks">4-Week Curriculum</a></li>
+          <li><a href="programme#mentoring">Mentoring</a></li>
+          <li><a href="programme#certificate">Certificate</a></li>
+          <li><a href="programme#cohort">Next Cohort</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">About</div>
+        <ul class="footer-links">
+          <li><a href="about">Our Story</a></li>
+          <li><a href="philosophy">Philosophy</a></li>
+          <li><a href="audience">Who It's For</a></li>
+          <li><a href="board">The Board</a></li>
+          <li><a href="team">The Team</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Get Involved</div>
+        <ul class="footer-links">
+          <li><a href="apply">Apply Now</a></li>
+          <li><a href="apply#mentor">Become a Mentor</a></li>
+          <li><a href="apply#schools">School Partnerships</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Contact</div>
+        <ul class="footer-links footer-contact">
+          <li>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+            programme@venixnextgen.org
+          </li>
+          <li>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Lagos, Nigeria
+          </li>
+          <li>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Mon – Fri, 9am – 5pm WAT
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-divider"></div>
+
+  <div class="footer-bottom">
+    <p class="footer-copy">Venix NextGen Initiative Ltd/Gte (RC 9688595) | Lagos, Nigeria</p>
+        <div class="footer-legal">
+      <a href="privacy">Privacy Policy</a><span class="fl-dot"></span>
+      <a href="terms">Terms of Use</a><span class="fl-dot"></span>
+      <a href="cookies">Cookie Policy</a><span class="fl-dot"></span>
+      <a href="safeguarding">Safeguarding Policy</a><span class="fl-dot"></span>
+      <a href="responsible-ai">Responsible AI</a>
+    </div>
+    <p class="footer-made">Built for Nigerian Youth 🇳🇬</p>
+  </div>
+</footer>
+<script src="scripts.js"></script>
+</body>
+</html>
