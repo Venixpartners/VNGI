@@ -679,3 +679,24 @@ footer{background:var(--navy);border-top:1px solid rgba(58,174,230,0.15)}
 @media(max-width:1050px){.growth-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:760px){.growth-grid,.growth-steps{grid-template-columns:1fr}.growth-hero{padding:9rem 5% 5rem;min-height:520px}.growth-bottom{flex-direction:column;align-items:flex-start}.growth-section{padding:4.5rem 5%}}
 @media(pointer:coarse){body{cursor:auto}.cur,.cur-ring{display:none}}
+
+
+/* Responsive polish and privacy controls */
+.vngi-cookie-banner[hidden]{display:none!important}
+.vngi-cookie-banner{position:fixed;z-index:11000;bottom:1.1rem;left:1.1rem;right:1.1rem;max-width:960px;margin:auto;background:#fff;border:1px solid #cbd5e1;box-shadow:0 12px 44px rgba(15,23,42,.26);border-radius:14px;padding:1.1rem 1.35rem;display:flex;align-items:center;gap:1.5rem;justify-content:space-between;cursor:auto}
+.vngi-cookie-copy{max-width:650px}
+.vngi-cookie-copy strong{font-family:'Inter',sans-serif;font-size:.96rem;color:#0f172a}
+.vngi-cookie-copy p{font-family:'Montserrat',sans-serif;font-size:.78rem;line-height:1.7;color:#475569;margin-top:.3rem}
+.vngi-cookie-copy a{color:#033bbd;text-decoration:underline}
+.vngi-cookie-actions{display:flex;gap:.55rem;flex-shrink:0;flex-wrap:wrap}
+.vngi-cookie-actions button{border:1px solid #033bbd;background:#fff;color:#033bbd;font-family:'Inter',sans-serif;font-weight:700;font-size:.78rem;padding:.75rem .9rem;border-radius:6px;cursor:pointer}
+.vngi-cookie-actions .vngi-cookie-accept{background:#033bbd;color:white}
+.vngi-cookie-actions button:focus-visible,.vngi-cookie-settings:focus-visible{outline:3px solid #56aaff;outline-offset:3px}
+.vngi-cookie-settings{position:fixed;bottom:.5rem;left:.5rem;z-index:10999;border:1px solid #64748b;background:#fff;color:#0f172a;padding:.35rem .55rem;border-radius:5px;font:600 .65rem 'Inter',sans-serif;cursor:pointer}
+.vngi-cookie-banner:not([hidden])~.vngi-cookie-settings{display:none}
+@media(max-width:850px){.vngi-cookie-banner{flex-direction:column;align-items:stretch;gap:1rem;max-height:80vh;overflow-y:auto}.vngi-cookie-actions{width:100%}.vngi-cookie-actions button{flex:1 1 135px}}
+@media(max-width:520px){.vngi-cookie-banner{left:.5rem;right:.5rem;bottom:.5rem;padding:.95rem}.vngi-cookie-copy p{font-size:.76rem}.vngi-cookie-actions button{padding:.8rem .6rem}}
+@media(max-width:900px){.growth-hero h1{overflow-wrap:break-word}.growth-bottom .btn-p{max-width:100%;white-space:normal;text-align:center}}
+@media(max-width:700px){.hero-h1{overflow-wrap:break-word}.hero-btns{flex-wrap:wrap}.nav-links{display:none}.growth-grid,.growth-steps,.nextgen-principles{grid-template-columns:1fr}.conference-actions a{max-width:100%}}
+@media(max-width:400px){.growth-hero h1{font-size:clamp(2.3rem,11vw,3.2rem)}.hero-btns>a{max-width:100%;white-space:normal;text-align:center}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{transition:none!important}}

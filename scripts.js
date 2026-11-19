@@ -64,7 +64,7 @@ document.addEventListener('click', (event) => {
 
   if (target.tagName.toLowerCase() === 'a') {
     const href = target.getAttribute('href');
-    if (!href || href.startsWith('#') || href.startsWith('javascript:') || target.target === '_blank') return;
+    if (!href || href.startsWith('#') || href.startsWith('javascript:') || href.startsWith('mailto:') || href.startsWith('tel:') || target.target === '_blank') return;
     event.preventDefault();
     closeMobileNav();
     showPageLoader();
@@ -73,7 +73,7 @@ document.addEventListener('click', (event) => {
   }
 
   if (target.disabled) return;
-  if (target === hamburger) return;
+  if (target === hamburger || target.closest('#vngi-cookie-banner') || target.id === 'vngi-cookie-settings') return;
   if (target.type === 'submit') return; // form submits are handled by their own handler (AJAX), not a page navigation — don't show the full-page loader for these
   showPageLoader();
 });
