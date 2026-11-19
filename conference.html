@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="logo.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Venix NextGen Conference 2027</title>
+<meta name="description" content="Venix NextGen Conference 2027 will bring together professionals, educators, technology leaders, employers, researchers, policymakers and the next generation to explore the technologies shaping work, learning and society.">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+#conference-hero{background:var(--navy);min-height:78vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:9rem}
+#conference-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 18% 25%,rgba(3,59,189,.35),transparent 48%),linear-gradient(135deg,rgba(3,59,189,.14),transparent 55%)}
+.conference-kicker{font-family:'Inter',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--sky);margin-bottom:1rem}
+.conference-title{font-family:'Anton',sans-serif;font-size:clamp(3.8rem,8vw,7.5rem);line-height:.94;text-transform:uppercase;color:var(--white);max-width:1000px}
+.conference-title span{color:var(--sky)}
+.conference-lead{font-family:'Montserrat',sans-serif;font-size:1rem;line-height:1.9;color:rgba(255,255,255,.72);max-width:720px;margin:1.5rem 0 2rem}
+.conf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2.5rem}
+.conf-card{padding:2rem;background:var(--sky-pale);border:1px solid rgba(0,74,173,.14)}
+.conf-card h3{font-family:'Inter',sans-serif;font-size:1rem;color:var(--navy);margin-bottom:.7rem}
+.conf-card p{font-family:'Montserrat',sans-serif;font-size:.86rem;line-height:1.75;color:var(--slate)}
+.conf-interest{background:var(--mist)}
+.conf-interest-inner{display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center}
+@media(max-width:900px){.conf-grid{grid-template-columns:1fr 1fr}.conf-interest-inner{grid-template-columns:1fr}}
+@media(max-width:640px){.conf-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="cur" id="cur"></div><div class="cur-ring" id="cur-ring"></div>
+<nav id="nav">
+  <a href="index" class="nav-logo"><img src="logo.png" alt="Venix NextGen" class="nav-logo-img"></a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="about">About</a></li>
+    <li><a href="programme">Programme</a></li>
+    <li><a href="philosophy">Philosophy</a></li>
+    <li><a href="audience">Who It's For</a></li>
+    <li><a href="conference">Conference 2027</a></li>
+  </ul>
+  <div class="nav-pill-group nav-pill-desktop">
+    <a href="https://lab.venixnextgen.org/" target="_blank" rel="noopener" class="nav-pill-outline">The Lab</a>
+    <a href="apply" class="nav-pill">Apply Now</a>
+  </div>
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <ul class="mobile-nav-links">
+    <li><a href="about">About</a></li>
+    <li><a href="programme">Programme</a></li>
+    <li><a href="philosophy">Philosophy</a></li>
+    <li><a href="audience">Who It's For</a></li>
+    <li><a href="conference">Conference 2027</a></li>
+    <li><a href="https://lab.venixnextgen.org/" target="_blank" rel="noopener" class="mobile-nav-lab">Enter the Lab</a></li>
+    <li><a href="apply" class="mobile-nav-apply">Apply Now</a></li>
+  </ul>
+</div>
+
+<section id="conference-hero">
+  <div style="position:relative;z-index:2">
+    <div class="conference-kicker">Coming Late 2027</div>
+    <h1 class="conference-title">Venix NextGen<br><span>Conference 2027</span></h1>
+    <p class="conference-lead">A new annual platform for the people shaping what comes next. The conference will bring together professionals, educators, technology leaders, employers, policymakers, researchers, entrepreneurs and emerging talent to explore how new technologies are changing work, learning and society.</p>
+    <div class="hero-btns">
+      <a href="mailto:programme@venixnextgen.org?subject=Venix%20NextGen%20Conference%202027%20Interest" class="btn-p">Register Your Interest</a>
+      <a href="mailto:programme@venixnextgen.org?subject=Venix%20NextGen%20Conference%202027%20Partnership" class="btn-g">Partnership Enquiry</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="s-eyebrow reveal"><div class="s-eline"></div><span class="s-etag">Why the Conference</span></div>
+  <h2 class="s-heading reveal">A meeting point for the next generation and the institutions shaping its future.</h2>
+  <p class="s-body reveal">The Venix NextGen Conference will extend VNGI beyond programmes and classrooms. It will create a public platform for serious conversations, practical learning, partnerships and new ideas around emerging technology and human capability.</p>
+  <div class="conf-grid">
+    <div class="conf-card reveal"><h3>Future of Work</h3><p>How emerging technologies are changing careers, organisations, productivity and professional standards.</p></div>
+    <div class="conf-card reveal d1"><h3>Education and Skills</h3><p>How schools, universities and employers can prepare people for rapid technological change.</p></div>
+    <div class="conf-card reveal d2"><h3>Responsible Technology</h3><p>Judgment, verification, ethics, safety and accountability in technology-enabled decisions.</p></div>
+    <div class="conf-card reveal"><h3>Innovation and Enterprise</h3><p>New products, businesses and opportunities being created by emerging technologies.</p></div>
+    <div class="conf-card reveal d1"><h3>Africa and the Next Generation</h3><p>How African professionals, institutions and innovators can shape rather than simply consume the next technology cycle.</p></div>
+    <div class="conf-card reveal d2"><h3>Current Focus: AI</h3><p>For 2027, artificial intelligence will be a major part of the conversation while the conference remains open to the broader NextGen agenda.</p></div>
+  </div>
+</section>
+
+<section class="conf-interest">
+  <div class="conf-interest-inner">
+    <div>
+      <div class="s-eyebrow reveal"><div class="s-eline"></div><span class="s-etag">Get Involved</span></div>
+      <h2 class="s-heading reveal">Help shape the first Venix NextGen Conference.</h2>
+      <p class="s-body reveal">We are building the conference with partners, institutions, speakers, sponsors and communities that share our commitment to preparing people for what comes next.</p>
+    </div>
+    <div class="conference-actions reveal d1">
+      <a href="mailto:programme@venixnextgen.org?subject=Venix%20NextGen%20Conference%202027%20Sponsorship" class="btn-p">Sponsor or Partner</a>
+      <a href="mailto:programme@venixnextgen.org?subject=Venix%20NextGen%20Conference%202027%20Speaker" class="btn-g">Speaker Interest</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand-col">
+      <div class="footer-brand"><img src="logo.png" alt="Venix NextGen" class="footer-logo-img"></div>
+      <div class="footer-tagline">Innovate. Elevate. <span>NextGen.</span></div>
+      <p class="footer-mission">Preparing people for the technologies, skills and ideas shaping what comes next.</p>
+    </div>
+    <div class="footer-nav-cols">
+      <div class="footer-col"><div class="footer-col-title">Explore</div><ul class="footer-links"><li><a href="programme">Programme</a></li><li><a href="https://lab.venixnextgen.org/">The Lab</a></li><li><a href="conference">Conference 2027</a></li></ul></div>
+      <div class="footer-col"><div class="footer-col-title">About</div><ul class="footer-links"><li><a href="about">Our Story</a></li><li><a href="philosophy">Philosophy</a></li><li><a href="board">The Board</a></li><li><a href="team">The Team</a></li></ul></div>
+      <div class="footer-col"><div class="footer-col-title">Get Involved</div><ul class="footer-links"><li><a href="apply">Apply Now</a></li><li><a href="mailto:programme@venixnextgen.org">Partner With Us</a></li></ul></div>
+      <div class="footer-col"><div class="footer-col-title">Contact</div><ul class="footer-contact"><li>programme@venixnextgen.org</li><li>Lagos, Nigeria</li><li>Mon - Fri, 9am - 5pm WAT</li></ul></div>
+    </div>
+  </div>
+  <div class="footer-divider"></div>
+  <div class="footer-bottom">
+    <p class="footer-copy">Venix NextGen Initiative Ltd/Gte (RC 9688595) | Lagos, Nigeria</p>
+    <div class="footer-legal"><a href="privacy">Privacy Policy</a><span class="fl-dot"></span><a href="terms">Terms of Use</a><span class="fl-dot"></span><a href="safeguarding">Safeguarding Policy</a></div>
+    <p class="footer-made">Born in Nigeria. Built for what comes next.</p>
+  </div>
+</footer>
+<div id="page-loader" class="page-loader hidden" aria-hidden="true"><div class="page-loader-inner"><div class="loader-ring"></div><p>Loading...</p></div></div>
+<script src="scripts.js"></script>
+</body>
+</html>
