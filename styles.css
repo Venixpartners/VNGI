@@ -700,3 +700,14 @@ footer{background:var(--navy);border-top:1px solid rgba(58,174,230,0.15)}
 @media(max-width:700px){.hero-h1{overflow-wrap:break-word}.hero-btns{flex-wrap:wrap}.nav-links{display:none}.growth-grid,.growth-steps,.nextgen-principles{grid-template-columns:1fr}.conference-actions a{max-width:100%}}
 @media(max-width:400px){.growth-hero h1{font-size:clamp(2.3rem,11vw,3.2rem)}.hero-btns>a{max-width:100%;white-space:normal;text-align:center}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{transition:none!important}}
+
+/* QA fixes: usable mobile navigation and anchor positioning */
+#mobile-nav{overflow-y:auto;overscroll-behavior:contain}
+.mobile-nav-links{max-width:100%;padding:5rem 1rem 2.5rem}
+@media(max-height:700px) and (max-width:1024px){
+  .mobile-nav{align-items:flex-start;justify-content:center}
+  .mobile-nav-links{gap:.9rem;margin:0 auto}
+  .mobile-nav-links li a{font-size:clamp(1.35rem,5.2vw,2rem)}
+}
+@media(max-width:480px){.mobile-nav-links{gap:1.25rem}}
+#weeks,#mentoring,#certificate,#cohort,#programme{scroll-margin-top:110px}
