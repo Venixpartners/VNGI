@@ -623,3 +623,26 @@ footer{background:var(--navy);border-top:1px solid rgba(58,174,230,0.15)}
   .legal-shell{grid-template-columns:1fr;gap:2rem}
   .legal-meta{position:static}
 }
+
+/* NextGen strategic positioning additions */
+.nextgen-principles{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.5rem}
+.ngp-item{padding:1.7rem;background:var(--sky-pale);border:1px solid rgba(0,74,173,0.14);min-height:190px}
+.ngp-item span{font-family:'Inter',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.18em;color:var(--blue)}
+.ngp-item strong{display:block;font-family:'Anton',sans-serif;font-size:1.45rem;text-transform:uppercase;color:var(--navy);margin:.8rem 0 .5rem}
+.ngp-item p{font-family:'Montserrat',sans-serif;font-size:.84rem;line-height:1.7;color:var(--slate)}
+#conference-teaser{background:var(--mist)}
+.conference-teaser-card{background:var(--navy);padding:3.5rem;display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:end}
+.conference-teaser-card .s-heading{color:var(--white)}
+.conference-teaser-card .s-body{color:rgba(255,255,255,.72)}
+.conference-teaser-card .s-eline{background:var(--sky)}
+.conference-teaser-card .s-etag{color:var(--sky)}
+.conference-actions{display:flex;flex-direction:column;gap:.8rem;min-width:220px}
+.mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.mv-card{padding:2.4rem;background:var(--sky-pale);border:1px solid rgba(0,74,173,.14)}
+.mv-objective{margin-top:1.5rem;padding:2.2rem 2.4rem;background:var(--navy);color:var(--white)}
+.mv-objective .s-eline{background:var(--sky)}
+.mv-objective .s-etag{color:var(--sky)}
+.mv-objective p{font-family:'Inter',sans-serif;font-size:clamp(1.1rem,2vw,1.55rem);line-height:1.55;max-width:900px}
+.tm-initials{font-family:'Anton',sans-serif;font-size:3.2rem;letter-spacing:.06em;color:rgba(255,255,255,.88)}
+@media(max-width:900px){.nextgen-principles{grid-template-columns:1fr 1fr}.conference-teaser-card{grid-template-columns:1fr}.conference-actions{flex-direction:row;flex-wrap:wrap}.mv-grid{grid-template-columns:1fr}}
+@media(max-width:640px){.nextgen-principles{grid-template-columns:1fr}.conference-teaser-card{padding:2rem}.conference-actions{flex-direction:column}}
