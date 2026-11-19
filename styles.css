@@ -1,9 +1,9 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --blue:#004aad;--blue-bright:#3aaee6;
-  --navy:#001f40;--navy-mid:#002a55;--navy-deep:#001530;
+  --blue:#033BBD;--blue-bright:#3aaee6;
+  --navy:#0F172A;--navy-mid:#002a55;--navy-deep:#001530;
   --sky:#3aaee6;--sky-light:#c8e8f7;--sky-pale:#e8f5fc;
-  --slate:#4a6580;--slate-light:#5a7a9a;--light:#d0e8f5;--white:#FFFFFF;
+  --slate:#647488;--slate-light:#5a7a9a;--light:#d0e8f5;--mist:#E2E8F0;--white:#FFFFFF;
 }
 html{scroll-behavior:smooth}
 body{font-family:'Montserrat',sans-serif;background:var(--sky-pale);color:var(--navy);overflow-x:hidden;cursor:none}
@@ -646,3 +646,36 @@ footer{background:var(--navy);border-top:1px solid rgba(58,174,230,0.15)}
 .tm-initials{font-family:'Anton',sans-serif;font-size:3.2rem;letter-spacing:.06em;color:rgba(255,255,255,.88)}
 @media(max-width:900px){.nextgen-principles{grid-template-columns:1fr 1fr}.conference-teaser-card{grid-template-columns:1fr}.conference-actions{flex-direction:row;flex-wrap:wrap}.mv-grid{grid-template-columns:1fr}}
 @media(max-width:640px){.nextgen-principles{grid-template-columns:1fr}.conference-teaser-card{padding:2rem}.conference-actions{flex-direction:column}}
+
+
+/* VNGI institutional and insights pages */
+.growth-hero{background:linear-gradient(132deg,#0F172A,#033BBD);padding:11rem 6% 6rem;color:#fff;min-height:610px;display:flex;flex-direction:column;justify-content:center}
+.growth-eyebrow{font-family:'Inter',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b9e2ff;margin-bottom:1.5rem}
+.growth-hero h1{font-family:'Anton',sans-serif;font-size:clamp(3.2rem,7.8vw,7rem);text-transform:uppercase;line-height:1.02;max-width:1100px;margin-bottom:1.5rem}
+.growth-hero h1 span{color:#8ddaff}
+.growth-hero>p{max-width:810px;font-size:1rem;line-height:1.85;color:rgba(255,255,255,.83);margin-bottom:1.8rem}
+.growth-section{padding:6rem 6%;background:var(--white)}
+.growth-section-alt{background:var(--sky-pale)}
+.growth-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem;margin-top:2.6rem}
+.growth-card{border:1px solid rgba(3,59,189,.16);padding:2rem;background:#f5f9fe;min-height:245px}
+.growth-num{font-family:'Anton',sans-serif;font-size:1.8rem;color:var(--blue);margin-bottom:1.3rem}
+.growth-card h3{font-family:'Inter',sans-serif;font-size:1.06rem;line-height:1.4;color:var(--navy);margin-bottom:.8rem}
+.growth-card p{font-family:'Montserrat',sans-serif;font-size:.84rem;line-height:1.8;color:var(--slate)}
+.growth-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-top:2.5rem}
+.growth-step{background:#fff;border:1px solid rgba(3,59,189,.14);display:flex;gap:1.5rem;padding:2rem}
+.growth-step>span{font-family:'Anton',sans-serif;font-size:2rem;color:var(--blue)}
+.growth-step h3{font-family:'Inter',sans-serif;font-size:1rem;margin-bottom:.5rem;color:var(--navy)}
+.growth-step p{font-family:'Montserrat',sans-serif;font-size:.82rem;line-height:1.8;color:var(--slate)}
+.growth-bottom{background:var(--navy);padding:5rem 6%;display:flex;justify-content:space-between;align-items:center;gap:3rem}
+.growth-bottom h2{font-family:'Anton',sans-serif;color:#fff;font-size:clamp(2rem,4vw,3.2rem);text-transform:uppercase;margin-bottom:1rem}
+.growth-bottom p{font-family:'Montserrat',sans-serif;color:rgba(255,255,255,.75);line-height:1.7;max-width:710px}
+.growth-bottom .btn-p{flex-shrink:0}
+.home-pathways{background:#f4f8ff}
+.home-pathways .growth-grid{margin-top:2rem}
+.home-pathways .growth-card{display:block;text-decoration:none;transition:transform .2s ease,border-color .2s ease}
+.home-pathways .growth-card:hover{transform:translateY(-4px);border-color:var(--blue)}
+.home-pathways .growth-card h3{font-family:'Anton',sans-serif;font-size:1.35rem;text-transform:uppercase}
+.home-pathways .growth-card .path-link{font-family:'Inter',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);margin-top:1.2rem;display:inline-block}
+@media(max-width:1050px){.growth-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.growth-grid,.growth-steps{grid-template-columns:1fr}.growth-hero{padding:9rem 5% 5rem;min-height:520px}.growth-bottom{flex-direction:column;align-items:flex-start}.growth-section{padding:4.5rem 5%}}
+@media(pointer:coarse){body{cursor:auto}.cur,.cur-ring{display:none}}
