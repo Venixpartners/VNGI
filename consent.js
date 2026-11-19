@@ -33,6 +33,13 @@
     var choice = { necessary: true, marketing: !!marketing, savedAt: new Date().toISOString() };
     try { localStorage.setItem(KEY, JSON.stringify(choice)); } catch (error) {}
     if (choice.marketing) startMetaPixel();
+    else if (pixelStarted) {
+      // Meta may already have been loaded on this page; revoke permission
+      // and reload so further page interactions cannot trigger new events.
+      if (typeof window.fbq === 'function') window.fbq('consent', 'revoke');
+      window.location.reload();
+      return choice;
+    }
     dismissBanner();
     return choice;
   }
