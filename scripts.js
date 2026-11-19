@@ -139,16 +139,16 @@ async function handleSubmit(e) {
       body: formData,
     });
 
-    // no-cors means we can't read the response — but if fetch didn't throw, it worked
+    // An opaque no-cors response cannot confirm whether Apps Script saved the submission.
     msg.style.display = 'block';
     msg.classList.add('form-msg-success');
-    msg.textContent = '\u2713 Application received! Check your inbox \u2014 we\'ve sent you a confirmation email.';
-    form.reset();
+    msg.textContent = 'Your application has been sent for processing, but we cannot confirm receipt in this browser. If you do not receive an acknowledgement, please contact programme@venixnextgen.org.';
+    // Keep the form details visible until delivery can be verified.
 
   } catch (err) {
     msg.style.display = 'block';
     msg.classList.add('form-msg-error');
-    msg.textContent = '\u2717 Submission failed. Please email us directly at stephenfemikingsley@gmail.com';
+    msg.textContent = '\u2717 Submission failed. Please email us directly at programme@venixnextgen.org';
   } finally {
     btn.disabled = false;
     btn.textContent = 'Submit Application \u2192';
