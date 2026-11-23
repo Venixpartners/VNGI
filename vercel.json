@@ -1,4 +1,19 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.venixnextgen.org" }],
+      "destination": "https://venixnextgen.org/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "vngi.vercel.app" }],
+      "destination": "https://venixnextgen.org/:path*",
+      "permanent": true
+    },
+    { "source": "/index", "destination": "/", "permanent": true }
+  ]
 }

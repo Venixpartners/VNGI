@@ -74,7 +74,16 @@
     settings.className = 'vngi-cookie-settings';
     settings.textContent = 'Cookie settings';
     settings.setAttribute('aria-label','Change cookie preferences');
-    document.body.appendChild(settings);
+    // Sit quietly in the footer next to the legal links; float only on pages without one.
+    var legal = document.querySelector('.footer-legal');
+    if (legal) {
+      var dot = document.createElement('span');
+      dot.className = 'fl-dot';
+      legal.appendChild(dot);
+      legal.appendChild(settings);
+    } else {
+      document.body.appendChild(settings);
+    }
     settings.addEventListener('click', showBanner);
 
     banner.querySelector('[data-cookie-choice="reject"]').addEventListener('click', function() { setChoice(false); });

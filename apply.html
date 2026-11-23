@@ -2,12 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<link rel="icon" type="image/png" href="logo.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Apply for a VNGI Programme | Venix NextGen</title>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<style>@keyframes spin{to{transform:rotate(360deg)}}.form-msg-error{color:#991b1b !important;background:rgba(254,202,202,0.25) !important;border-color:rgba(239,68,68,0.35) !important}
+<style>@keyframes spin{to{transform:rotate(360deg)}}
 
 /* Apply page: match section bg to nav so pre-scroll feels seamless */
 #apply{background:var(--navy);padding-top:9rem}
@@ -36,7 +38,10 @@
 <meta property="og:title" content="Apply for a VNGI Programme | Venix NextGen">
 <meta property="og:description" content="Apply to join the Venix NextGen learning programme and build practical AI literacy, verification skills and responsible technology judgment.">
 <meta property="og:url" content="https://venixnextgen.org/apply">
-<meta property="og:image" content="https://venixnextgen.org/logo.png">
+<meta property="og:image" content="https://venixnextgen.org/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://venixnextgen.org/og-image.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Apply for a VNGI Programme | Venix NextGen">
 <meta name="twitter:description" content="Apply to join the Venix NextGen learning programme and build practical AI literacy, verification skills and responsible technology judgment.">
@@ -50,7 +55,7 @@
 
 <!-- NAV -->
 <nav id="nav" class="solid">
-  <a href="index" class="nav-logo">
+  <a href="/" class="nav-logo">
     <img src="logo.png" alt="Venix NextGen" class="nav-logo-img">
   </a>
   <ul class="nav-links" id="nav-links">
@@ -93,42 +98,53 @@
       <div class="apply-badge"><div class="ab-dot"></div><span class="ab-text">Applications Open</span></div>
       <div class="s-eyebrow"><div class="s-eline"></div><span class="s-etag">Join the Initiative</span></div>
       <h1 class="s-heading">Apply for the Next Cohort</h1>
-      <p class="s-body">Complete the form and our team will reach out with next steps. The next cohort starts soon — spots are limited.</p>
+      <p class="s-body">Complete the form and our team will reach out with next steps. The next cohort starts soon and places are limited.</p>
       <div class="apply-img reveal d1">
         <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?w=800&q=80" alt="Students in a workshop">
         <div class="apply-img-tag">"The gap between using AI and understanding it is where careers are made or lost."</div>
       </div>
     </div>
-    <form class="apply-form reveal d2" onsubmit="handleSubmit(event)">
+    <form class="apply-form reveal d2" id="apply-form" onsubmit="handleSubmit(event)">
       <div class="form-section-title">Personal Information</div>
       <div class="form-row">
-        <div class="fg"><label>First Name</label><input type="text" name="firstName" placeholder="Adaeze" required></div>
-        <div class="fg"><label>Last Name</label><input type="text" name="lastName" placeholder="Okonkwo" required></div>
+        <div class="fg"><label for="f-first">First Name</label><input type="text" id="f-first" name="firstName" placeholder="Adaeze" autocomplete="given-name" required pattern=".*\S.*" maxlength="60"></div>
+        <div class="fg"><label for="f-last">Last Name</label><input type="text" id="f-last" name="lastName" placeholder="Okonkwo" autocomplete="family-name" required pattern=".*\S.*" maxlength="60"></div>
       </div>
-      <div class="fg"><label>Email Address</label><input type="email" name="email" placeholder="adaeze@example.com" required></div>
-      <div class="fg"><label>Phone Number</label><input type="tel" name="phone" placeholder="+234 800 000 0000" required></div>
+      <div class="fg"><label for="f-email">Email Address</label><input type="email" id="f-email" name="email" placeholder="adaeze@example.com" autocomplete="email" required pattern="[^@\s]+@[^@\s]+\.[^@\s]{2,}" maxlength="120"></div>
+      <div class="fg"><label for="f-phone">Phone Number</label><input type="tel" id="f-phone" name="phone" placeholder="+234 800 000 0000" autocomplete="tel" required pattern="\+?[0-9 ]{10,18}" maxlength="20" title="Enter a phone number with at least 10 digits"></div>
       <div class="fg">
         <label for="age-range">Age Range</label>
         <select id="age-range" name="ageRange" required>
           <option value="" disabled selected>Select your age range</option>
-          <option>14 – 18</option><option>18 – 25</option><option>26 – 35</option>
+          <option value="14 to 17">14 to 17</option><option value="18 to 25">18 to 25</option><option value="26 to 35">26 to 35</option>
         </select>
       </div>
+      <fieldset class="guardian-block" id="guardian-block" hidden>
+        <div class="form-section-title mt-05">Parent or Guardian</div>
+        <p class="form-note guardian-intro">Because you are under 18, we need a parent or guardian to agree to your application. We will contact them before you are enrolled.</p>
+        <div class="fg"><label for="g-name">Parent or Guardian Name</label><input type="text" id="g-name" name="guardianName" autocomplete="off" pattern=".*\S.*" maxlength="120"></div>
+        <div class="form-row">
+          <div class="fg"><label for="g-phone">Their Phone Number</label><input type="tel" id="g-phone" name="guardianPhone" autocomplete="off" pattern="\+?[0-9 ]{10,18}" maxlength="20" title="Enter a phone number with at least 10 digits"></div>
+          <div class="fg"><label for="g-email">Their Email Address</label><input type="email" id="g-email" name="guardianEmail" autocomplete="off" pattern="[^@\s]+@[^@\s]+\.[^@\s]{2,}" maxlength="120"></div>
+        </div>
+        <label class="fg-check" for="g-consent"><input type="checkbox" id="g-consent" name="guardianConsent" value="yes"><span>My parent or guardian knows I am applying and agrees to Venix NextGen contacting them about my place.</span></label>
+      </fieldset>
       <div class="form-section-title mt-05">Location</div>
-      <div class="fg"><label>Address</label><input type="text" name="address" placeholder="Your street address"></div>
+      <div class="fg"><label for="f-address">Address</label><input type="text" id="f-address" name="address" placeholder="Your street address" autocomplete="street-address" maxlength="200"></div>
       <div class="form-row">
         <div class="fg">
           <label for="state">State</label>
-          <select id="state" name="state">
+          <select id="state" name="state" autocomplete="address-level1">
             <option value="" disabled selected>Select state</option>
-            <option>Abia</option><option>Adamawa</option><option>Akwa Ibom</option><option>Anambra</option><option>Bauchi</option><option>Bayelsa</option><option>Benue</option><option>Borno</option><option>Cross River</option><option>Delta</option><option>Ebonyi</option><option>Edo</option><option>Ekiti</option><option>Enugu</option><option>FCT – Abuja</option><option>Gombe</option><option>Imo</option><option>Jigawa</option><option>Kaduna</option><option>Kano</option><option>Katsina</option><option>Kebbi</option><option>Kogi</option><option>Kwara</option><option>Lagos</option><option>Nasarawa</option><option>Niger</option><option>Ogun</option><option>Ondo</option><option>Osun</option><option>Oyo</option><option>Plateau</option><option>Rivers</option><option>Sokoto</option><option>Taraba</option><option>Yobe</option><option>Zamfara</option>
+            <option>Abia</option><option>Adamawa</option><option>Akwa Ibom</option><option>Anambra</option><option>Bauchi</option><option>Bayelsa</option><option>Benue</option><option>Borno</option><option>Cross River</option><option>Delta</option><option>Ebonyi</option><option>Edo</option><option>Ekiti</option><option>Enugu</option><option>FCT Abuja</option><option>Gombe</option><option>Imo</option><option>Jigawa</option><option>Kaduna</option><option>Kano</option><option>Katsina</option><option>Kebbi</option><option>Kogi</option><option>Kwara</option><option>Lagos</option><option>Nasarawa</option><option>Niger</option><option>Ogun</option><option>Ondo</option><option>Osun</option><option>Oyo</option><option>Plateau</option><option>Rivers</option><option>Sokoto</option><option>Taraba</option><option>Yobe</option><option>Zamfara</option><option>Outside Nigeria</option>
           </select>
         </div>
-        <div class="fg"><label>Country</label><input type="text" name="country" value="Nigeria" placeholder="Country"></div>
+        <div class="fg"><label for="f-country">Country</label><input type="text" id="f-country" name="country" value="Nigeria" placeholder="Country" autocomplete="country-name" maxlength="60"></div>
       </div>
-      <div id="form-msg"></div>
+      <label class="fg-check" for="f-privacy"><input type="checkbox" id="f-privacy" name="privacyConsent" value="yes" required><span>I have read the <a href="privacy" target="_blank" rel="noopener">Privacy Policy</a> and agree to Venix NextGen using these details to process my application and contact me about it.</span></label>
+      <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div id="form-msg" role="status" aria-live="polite"></div>
       <button type="submit" class="form-submit">Submit Application →</button>
-      <p class="form-note">By applying you agree to be contacted by the Venix NextGen team regarding your application and programme details.</p>
     </form>
   </div>
 </section>
@@ -199,7 +215,7 @@
           </li>
           <li>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            Mon – Fri, 9am – 5pm WAT
+            Monday to Friday, 9am to 5pm WAT
           </li>
         </ul>
       </div>
