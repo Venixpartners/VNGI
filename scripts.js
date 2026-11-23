@@ -160,6 +160,8 @@ function setupApplyForm() {
   if (age) age.addEventListener('change', syncGuardian);
   syncGuardian();
 
+  form.addEventListener('submit', handleSubmit);
+
   // Any edit after a duplicate warning means the next click is a deliberate resubmission.
   form.addEventListener('input', () => { delete form.dataset.dupeWarned; });
 }
