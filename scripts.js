@@ -256,8 +256,9 @@ async function handleSubmit(e) {
     let body = null;
     try { body = JSON.parse(text); } catch (err) {}
     const status = body && String(body.status || body.result || '').toLowerCase();
-    if (res.ok && body && (status === 'success' || status === 'ok' || body.ok === true)) outcome = 'ok';
-    else if (!res.ok || (body && (status === 'error' || body.ok === false))) outcome = 'error';
+    // The VNGI Apps Script replies {"success":true} or {"success":false}.
+    if (res.ok && body && (body.success === true || status === 'success' || status === 'ok' || body.ok === true)) outcome = 'ok';
+    else if (!res.ok || (body && (body.success === false || status === 'error' || body.ok === false))) outcome = 'error';
   } catch (err) {
     // Network failure or a response we are not allowed to read.
     outcome = 'unknown';
