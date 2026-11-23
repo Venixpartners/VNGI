@@ -718,6 +718,8 @@ footer{background:var(--navy);border-top:1px solid rgba(58,174,230,0.15)}
 .has-custom-cursor .cur,.has-custom-cursor .cur-ring{display:block}
 /* Keep the header, and its close button, above the open mobile menu */
 .menu-open nav{z-index:460;background:transparent;box-shadow:none}
+/* Stacking order must switch instantly, never animate */
+nav{transition:all 0.5s,z-index 0s}
 .menu-open nav .nav-logo{position:relative;z-index:1}
 /* Application form */
 .guardian-block{border:0;margin:0;padding:0;min-width:0;display:flex;flex-direction:column;gap:1.3rem}
